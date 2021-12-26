@@ -1,11 +1,25 @@
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import CartWidget from '../CartWidget/CartWidget';
+// import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+// import CartWidget from '../CartWidget/CartWidget';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
+    const categories= [
+        {id: 'a', addresss: '/', text:'Home'},
+        {id: 'b', address: '/category/perros', text: 'Perros'},
+        {id: 'c', address: '/category/gatos', text: 'Gatos'},
+        {id: 'd', address: '/category/rodeores', text: 'Roedores'},
+    ]
     return (
-        <>
-        <Navbar bg="light" expand="lg">
+        <section>
+        {categories.map ((cat)=>{
+            return (
+            <div key={cat.id}>
+                <Link to={cat.address}>{cat.text}</Link>
+            </div>
+        );
+        })}
+        {/* <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand href="#home">Tienda Fundación Luna</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,8 +38,10 @@ export const NavBar = () => {
                 </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar> 
         
-        </>
+        en bootstrap poner nav.link as={navlink} to ='algo'*/}
+        
+        </section>
     )
 }
