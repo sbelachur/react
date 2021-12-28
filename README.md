@@ -2,28 +2,25 @@ Tienda Fundación Luna es un e-commerce para la venta de juguetes y accesorios p
 
 Cuenta con
 
-Manejo de componentes.
-Bootstrap React para su diseño.
+-Manejo de componentes.
+-Bootstrap React para su diseño.
+
 Instalación
 
-Forkeá y cloná el repositorio
+- Forkeá y cloná el repositorio
 
-Parado en la raíz del proyecto corré el comando
+- Parado en la raíz del proyecto corré el comando
 
-npm install
+              npm install
+- Usá el siguiente comando para correr el proyecto, que estará disponible en el local host.
 
-para instalar todas las dependecias del proyecto
-
-Usá
-
-npm start
-
-para correr el proyecto, que estará disponible en el local host.
+              npm start
 
 Dependencias
 
-Bootstrap React para dar formato a la aplicación.
+-Bootstrap React para dar formato a la aplicación.
 -React Router Dom para la navegación
+
 
 Autor
 
