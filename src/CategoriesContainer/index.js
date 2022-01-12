@@ -26,7 +26,7 @@ return (
     <>
     <Row>
         <h2>Categorias</h2>
-        <CategoriesList categories={categories}/>
+        <CategoryList categories={categories}/>
     </Row>
     </>
 )

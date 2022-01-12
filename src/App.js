@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './ItemListContainer';
-import {NavBar} from './components/NavBar/NavBar'
+import NavBar from './components/NavBar/NavBar';
 import {BrowserRouter as Router ,Routes, Route, Navigate} from 'react-router-dom'; 
 
 
