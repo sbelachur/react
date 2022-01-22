@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-import CategoryList from '../components/CategoryList';
+import CategoryList from '../../components/CategoryList';
 
-import Categories from '../mocks/Categories';
+import Categories from '../../mocks/Categories';
 import {Row} from 'react-bootstrap';
 
 

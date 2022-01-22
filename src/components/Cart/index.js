@@ -1,26 +1,48 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React, {useContext} from 'react';
+import { Button, Table } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import {CartContext} from '../../context/CartContext';
+import CartDetail from '../CartDetail';
 
-const Cart = ({item, removeItem, addItem}) => {
-    return (
-        <div>
-            <h2>
-                {item.title} - cantidad: {item.number}
-            </h2>
+const Cart = () => {
+    const {item, setItem, clearCart} = useContext (CartContext);
+
+    const onClear = () => {
+        clearCart ();
+    };
+
+    if (item.length > 0) {
+        return (
+            <>
+            <Table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <CartDetail />
+                </tbody>
+            </Table>
+            <Button onClick={onClear}>Borrar productos del Carrito</Button>
+            </>
+        );
+    } else {
+        return (
+            <>
             <div>
-                <Button onClick={() => addItem (item.id)}> Agregar al Carrito </Button>
-                <Button onClick={() => removeItem (item.id)}>Borrar Producto</Button>
+                No hay productos en el Carrito
             </div>
-        </div>
-    );
-};
+            <div>
+                <NavLink to="/">Seguir Comprando</NavLink>
+            </div>
+            </>
+        )
+    }
+}
 
-// function Cart () {
-//     const addCart = () => {
-//         alert (`Agregaste el producto a tu carrito`);
-//     }
-
-//     return <Button onClick={addCart}>Agregar al Carrito</Button>
-// }
 
 export default Cart
