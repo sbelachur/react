@@ -5,39 +5,27 @@ import {NavLink} from 'react-router-dom';
 import {Container, Image, Row, Col, Button} from 'react-bootstrap';
 import ItemDetailContainer from '../../containers/ItemDetailContainer';
 
-const ItemDetail = ({product}) => {
-    const precio = product.precio;
-    const [carrito, setCarrito] = useState (false);
-    const {producto, addCart} = useContext(cartContext);
+const ItemDetail = ({item}) => {
+    
+    const {addItem} = useContext(cartContext);
 
-    const agregarCarrito = (contador) => {
-        const valor = precio * contador;
-
-        setCarrito (true);
-        addCart ({productos: product, cantidad: contador});
+    const onAdd = (contador) => {
+        addItem(item, cantidad);
     };
+
     return (
         <>
         <Container>
             <Row>
                 <Col>
-                <Image src={product.image}></Image>
+                <Image src={item.pictureURL}></Image>
                 </Col>
                 <Col>
-                <h2>{product.title}</h2>
-                <h2>{product.price}</h2>
-                <p>{product.description}</p>
-
-                {agregarCart ? (
-                    <Button as={NavLink} to="/cart">
-                    Finalizar compra
-                    </Button>
-                ) : (
-                    <ItemCount
-                    precio={product.price}
-                    agregarCarrito={agregarCarrito}
-                    ></ItemCount>
-                )}
+                <h2>{item.title}</h2>
+                <h2>{item.price}</h2>
+                <ItemCoun stock={item.stock} initial={item.stock >= 1 ? 1 : 0} onAdd={onAdd} />
+                <h3>Descripción</h3>
+                <p>{item.description}</p>
 
                 </Col>
             </Row>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import CategoryList from '../../components/CategoryList';
+import Category from '../../components/Category';
 
 import Categories from '../../mocks/Categories';
 import {Row} from 'react-bootstrap';
@@ -26,7 +26,7 @@ return (
     <>
     <Row>
         <h2>Categorias</h2>
-        <CategoryList categories={categories}/>
+        <Category categories={categories}/>
     </Row>
     </>
 )

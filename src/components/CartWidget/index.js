@@ -4,34 +4,27 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { Button, Badge } from 'react-bootstrap';
 import {CartContext} from "../../context/CartContext"
 
-function CartWidget () {
-    const {items} = useContext(CartContext)
+const CartWidget = () => {
+    const {items} = useContext(CartContext);
+    let count = 0;
 
-    const sumaItems = (items) => {
-        var x = 0;
-        for ( let i = 0; i < items.length; i++) {
-            x = x + items[i].quantity;
-        }
-        return x;
-    };
-    
-    if(items.length > 0 ) {
+    items.map((item) => {
+        count = count + item.quantity;
+        return item;
+    });
+
         return (
-            <Button>
+            <>
+            {count !== 0 && (
+                <Button>
                 <FontAwesomeIcon icon ={faShoppingCart} />
-                <Badge>{sumaItems(items)}</Badge>
+                <Badge>{count}</Badge>
+                </Button>
 
-            </Button>
+            )}
+            </>
+           
         );
-    } else {
-        return (
-            <Button>
-                <FontAwesomeIcon icon ={faShoppingCart} />
-            </Button>
-        )
-    }
-
-    }
-    
+    } 
 
 export default CartWidget;

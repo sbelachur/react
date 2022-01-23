@@ -21,8 +21,8 @@ function Category () {
         {categories.map ((categories) => {
             return (
                 <NavDropdown.Item as={NavLink}
-                to={`/categoria/${categories.title}`}
-                key={categories.catId}>
+                key={categories.catId}
+                to={categories.ruta}>
                     {categories.title}
                 </NavDropdown.Item>
             )

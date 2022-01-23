@@ -2,7 +2,7 @@ import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import CartWidget from '../CartWidget';
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom'
-import Categories from "../../mocks/Categories"
+import Category from '../Category';
 
 function NavBar () {
 
@@ -15,7 +15,7 @@ function NavBar () {
       <Nav className="me-auto">
         <Nav.Link as={NavLink} to="/">Inicio</Nav.Link>
         <NavDropdown title="Categorías" id="basic-nav-dropdown">
-          <Categories />
+          <Category />
         </NavDropdown>
       </Nav>
       <Link to={`/cart`}>

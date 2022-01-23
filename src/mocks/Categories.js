@@ -1,8 +1,8 @@
 const Categories = [
-    {catId: 1, title: "Todos los productos"},
-    {catId: 2, title: "Perros"},
-    {catId: 3, title: "Gatos"},
-    {catId: 4, title: "Roedores"},
+    {catId: "a", title: "Todos los productos", ruta: '/categoria/a' },
+    {catId: "b", title: "Perros",ruta: '/categoria/b'},
+    {catId: "c", title: "Gatos",ruta: '/categoria/c'},
+    {catId: "d", title: "Roedores",ruta: '/categoria/d'},
 ];
 
 export default Categories;

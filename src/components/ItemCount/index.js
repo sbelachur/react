@@ -1,33 +1,32 @@
 import React, {useState} from 'react';
-import { Button, ButtonGroup} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
-const ItemCount = ({agregarCarrito}) => {
-    const [contador, setContador] = useState (1);
+const ItemCount = ({stock, onAdd}) => {
+    const [contador, setContador] = useState (0);
 
-    const onAdd = () => {
-        agregarCarrito (contador);
-    };
+    const agregarItem = () => {
+        if(contador<stock) {
+            setContador(prevContador => prevContador+1)
+        }
+    }
+
+    const quitarItem = () => {
+        if(contador>0) {
+            setContador(prevContador=> prevContador-1)
+        }
+    }
 
     return (
         <>
-        <ButtonGroup>
-            <Button onClick ={contador > 1 ? () => {
-                setContador(contador - 1);
-            }
-            : () => {
-                setContador(contador);
-            }
-            }
-            >
-            </Button>
-            <Button>
-                {contador}
-            </Button>
-        </ButtonGroup>
-        <Button onClick={onAdd}>
-            Agregar
-        </Button>
-
+        <div>
+            <Button onClick={quitarItem}>-</Button>
+            <p>{contador}</p>
+            <Button onClick={agregarItem}>+</Button>
+        </div>
+        <div>
+            <Button onClick={() => onAdd(contador)}>Agregar al carrito</Button>
+        </div>
+    
         </>
     )
 }
