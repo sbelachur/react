@@ -4,7 +4,7 @@ import React from 'react';
 import {NavLink, Link} from 'react-router-dom'
 import Category from '../Category';
 
-function NavBar () {
+const NavBar = () => {
 
     return (
       <Navbar bg="light" expand="lg">

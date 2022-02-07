@@ -24,6 +24,9 @@ const Cart = () => {
                 <p>Total: ${total}</p>
                 <Button onClick={onClear}>Borrar productos del Carrito</Button>
                 <NavLink to="/">Seguir Comprando</NavLink>
+                <NavLink to={`/formulario`}>
+                    <Button>Finalizar Compra</Button>
+                </NavLink>
                 </>
             ) : (
                 <>
